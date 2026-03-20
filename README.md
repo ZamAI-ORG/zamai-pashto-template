@@ -1,8 +1,6 @@
 # ZamAI Pashto 🇦🇫
 
-<div align="center">
-
-**Learn Pashto Language & Explore Afghan Culture**
+## Learn Pashto Language & Explore Afghan Culture
 
 پښتو ژبه زده کړئ او افغان کلتور وپلټئ
 
@@ -10,8 +8,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![React](https://img.shields.io/badge/React-19-blue)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)](https://www.typescriptlang.org/)
-
-</div>
 
 ---
 
@@ -22,12 +18,14 @@ ZamAI Pashto is a comprehensive language learning and cultural preservation plat
 ## ✨ Features
 
 ### 📝 Pashto Alphabet (الفبا)
+
 - Complete 44-letter Pashto alphabet
 - Interactive letter cards with pronunciation guides
 - Example words for each letter
 - Searchable alphabet reference
 
 ### 📚 Vocabulary Builder (لغات جوړونه)
+
 - 60+ essential Pashto words
 - Categorized vocabulary (Family, Numbers, Colors, Body, Food, Nature, Verbs, Places)
 - Daily word feature
@@ -35,19 +33,29 @@ ZamAI Pashto is a comprehensive language learning and cultural preservation plat
 - Search and filter functionality
 
 ### 🔄 AI Translator (ژباړن)
+
 - Pashto-English and English-Pashto translation
 - Common phrases reference
 - Dictionary-based translation for learning
 - Easy-to-use interface
 
 ### 💬 Proverbs & Culture (متلونه)
+
 - Traditional Pashto proverbs with meanings
 - Transliteration for pronunciation
 - Cultural context explanations
 - Category-based browsing
 - Information about Landay poetry
 
+### 🗂️ Data Pipeline (د معلوماتو پایپ لاین)
+
+- Reference workflows for scraping Pashto news sites
+- PDF discovery and download patterns for book collections
+- Text extraction, cleaning, and Hugging Face dataset publishing examples
+- Source guidance for BBC Pashto, VOA Pashto, Pajhwok, and similar corpora
+
 ### 📖 About ZamAI (درباره)
+
 - Project mission and goals
 - Technical projects overview
 - Information about Pashto language
@@ -57,7 +65,7 @@ ZamAI Pashto is a comprehensive language learning and cultural preservation plat
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm or yarn
 
 ### Installation
@@ -95,7 +103,7 @@ npm run build
 
 ## 📁 Project Structure
 
-```
+```text
 ZamAI_Pashto/
 ├── public/
 │   └── favicon.svg
@@ -109,6 +117,7 @@ ZamAI_Pashto/
 │   │   ├── Vocabulary.tsx / Vocabulary.css
 │   │   ├── Translator.tsx / Translator.css
 │   │   ├── Proverbs.tsx / Proverbs.css
+│   │   ├── DataPipeline.tsx / DataPipeline.css
 │   │   └── About.tsx / About.css
 │   ├── styles/
 │   │   └── global.css
@@ -148,12 +157,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-<div align="center">
+## ژبه د ولس هویت دی
 
-**ژبه د ولس هویت دی**
-
-*"Language is the identity of a nation"*
+Language is the identity of a nation.
 
 Made with ❤️ for the Pashto language
-
-</div>

@@ -8,6 +8,7 @@ const navItems = [
   { path: '/vocabulary', label: 'Vocabulary', labelPashto: 'لغات' },
   { path: '/translator', label: 'Translator', labelPashto: 'ژباړن' },
   { path: '/proverbs', label: 'Proverbs', labelPashto: 'متلونه' },
+  { path: '/pipeline', label: 'Pipeline', labelPashto: 'پایپ لاین' },
   { path: '/about', label: 'About', labelPashto: 'درباره' },
 ]
 
@@ -64,7 +65,7 @@ function Layout() {
           <div className="footer-links">
             <h4>Quick Links</h4>
             <nav>
-              {navItems.slice(0, 4).map((item) => (
+              {navItems.slice(0, 5).map((item) => (
                 <Link key={item.path} to={item.path}>{item.label}</Link>
               ))}
             </nav>

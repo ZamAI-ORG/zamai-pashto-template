@@ -35,3 +35,7 @@ coverage/
 # Temporary files
 *.tmp
 *.temp
+
+
+#Ignore insiders AI rules
+.github/instructions/codacy.instructions.md

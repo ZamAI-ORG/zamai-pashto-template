@@ -30,6 +30,13 @@ const features = [
     description: 'Discover traditional Pashto proverbs and Afghan cultural wisdom.',
     link: '/proverbs',
   },
+  {
+    icon: '🗂️',
+    title: 'Data Pipeline',
+    titlePashto: 'د معلوماتو پایپ لاین',
+    description: 'Browse collection workflows for scraping Pashto sites, books, and PDFs.',
+    link: '/pipeline',
+  },
 ]
 
 const stats = [
