@@ -1,0 +1,116 @@
+.resource-collection-page {
+  padding-bottom: var(--spacing-3xl);
+}
+
+.resource-collection-hero {
+  padding-bottom: var(--spacing-2xl);
+}
+
+.collection-header {
+  margin-bottom: var(--spacing-xl);
+}
+
+.collection-toolbar {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.collection-toolbar-stats {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  color: var(--gray-700);
+  font-size: 0.92rem;
+}
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-xl);
+}
+
+.collection-entry {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.collection-entry-header {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  align-items: flex-start;
+}
+
+.collection-entry-header .pashto-text {
+  color: var(--accent-teal);
+}
+
+.verification-badge {
+  flex-shrink: 0;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.verification-badge.curated {
+  background: rgba(46, 125, 50, 0.12);
+  color: var(--primary-green-dark);
+}
+
+.verification-badge.community-approved {
+  background: rgba(0, 121, 107, 0.14);
+  color: var(--accent-teal);
+}
+
+.entry-subtitle {
+  color: var(--gray-500);
+  font-style: italic;
+}
+
+.entry-summary,
+.entry-body {
+  color: var(--gray-700);
+}
+
+.entry-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.entry-tag {
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--radius-full);
+  background: var(--gray-100);
+  color: var(--gray-700);
+  font-size: 0.82rem;
+}
+
+.entry-meta {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  color: var(--gray-500);
+  font-size: 0.9rem;
+}
+
+.collection-empty {
+  margin-top: var(--spacing-2xl);
+  text-align: center;
+}
+
+.collection-empty p {
+  margin: var(--spacing-sm) 0 var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+  .collection-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .collection-entry-header {
+    flex-direction: column;
+  }
+}

@@ -101,19 +101,19 @@ const collectionPreviews = [
     title: 'Poetry Shelf',
     titlePashto: 'د شاعرۍ زېرمتون',
     items: ['Rahman Baba poetry', 'Khushal Khan Khattak selections', 'Landay folk verse'],
-    link: '/resources',
+    link: '/resources/poetry',
   },
   {
     title: 'Names & Meanings',
     titlePashto: 'نومونه او ماناوې',
     items: ['مینه - love', 'هیله - hope', 'ننګیالی - courageous'],
-    link: '/resources',
+    link: '/resources/names',
   },
   {
     title: 'Media & Diaspora',
     titlePashto: 'رسنۍ او کډوالي',
     items: ['BBC Pashto', 'VOA Pashto', 'Diaspora learning circles'],
-    link: '/resources',
+    link: '/resources/media',
   },
 ]
 

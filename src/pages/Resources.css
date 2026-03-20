@@ -98,6 +98,15 @@
   color: var(--gray-700);
 }
 
+.resource-link {
+  color: var(--primary-green);
+  font-weight: 700;
+}
+
+.resource-link:hover {
+  color: var(--accent-teal);
+}
+
 .resource-meta {
   width: fit-content;
   padding: 0.3rem 0.75rem;
@@ -108,37 +117,27 @@
   font-weight: 600;
 }
 
-.name-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-xl);
-}
-
-.name-card {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-sm);
-}
-
-.name-card h3 {
-  color: var(--primary-green);
-  font-size: 1.8rem;
-}
-
-.name-transliteration {
-  color: var(--gray-500);
-  font-style: italic;
-}
-
-.name-meaning {
-  color: var(--accent-teal);
-  font-weight: 700;
-}
-
 .contribution-layout {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   gap: var(--spacing-xl);
+}
+
+.rule-list {
+  padding-left: 1.2rem;
+  color: var(--gray-700);
+}
+
+.rule-list li + li {
+  margin-top: var(--spacing-sm);
+}
+
+.moderation-card {
+  justify-content: space-between;
+}
+
+.moderation-link {
+  width: fit-content;
 }
 
 .contribution-guide h3,
@@ -234,7 +233,6 @@
 
 @media (max-width: 1024px) {
   .resources-grid.three-up,
-  .name-grid,
   .contribution-layout {
     grid-template-columns: 1fr;
   }
