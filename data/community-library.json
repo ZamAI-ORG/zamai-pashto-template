@@ -1,0 +1,45 @@
+{
+  "exportedAt": "2026-03-20T23:03:34.282Z",
+  "entries": {
+    "poetry": [
+      {
+        "id": "76c490bd-eaf2-4d03-9603-57c8d5dea70d",
+        "collection": "poetry",
+        "title": "A village landay about departure",
+        "titlePashto": "لنډۍ د بېلتون په اړه",
+        "summary": "A short landay-style note about migration, distance, and the emotional cost of leaving home.",
+        "body": "This submission preserves a short oral-style line remembered in family gatherings. It is offered as a cultural note rather than a formally sourced printed text, and the editorial value is in documenting emotional language around travel, parting, and memory.",
+        "tags": [
+          "landay",
+          "oral tradition",
+          "migration",
+          "memory"
+        ],
+        "region": "Kandahar / diaspora family retelling",
+        "contributor": "Yaqoob Tasal",
+        "verificationStatus": "community-approved"
+      }
+    ],
+    "books": [],
+    "names": [
+      {
+        "id": "8271eeaf-6369-4727-8b95-195a9d0f4062",
+        "collection": "names",
+        "title": "بریالۍ",
+        "titlePashto": "بریالۍ",
+        "summary": "Meaning: successful or accomplished. A name associated with aspiration, dignity, and achievement.",
+        "body": "This name is used with a positive sense of accomplishment and good outcome. It fits the site library because it connects naming practice with family values, encouragement, and public identity rather than only dictionary meaning.",
+        "tags": [
+          "name",
+          "identity",
+          "aspiration",
+          "family"
+        ],
+        "region": "Widely understood across Afghan and diaspora Pashto families",
+        "contributor": "Yaqoob Tasal",
+        "verificationStatus": "community-approved"
+      }
+    ],
+    "media": []
+  }
+}
