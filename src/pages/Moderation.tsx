@@ -199,7 +199,7 @@ function Moderation() {
           </div>
         </div>
 
-        <div className="moderation-sync card">
+        <div className="moderation-sync card" id="versioned-export">
           <div>
             <h2>Versioned Import / Export</h2>
             <p className="pashto-text">نسخه لرونکی واردول او صادرول</p>

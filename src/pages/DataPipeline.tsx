@@ -85,6 +85,30 @@ const runnableAssets = [
   },
 ]
 
+const projectInterfaces = [
+  {
+    id: 'api-surface',
+    title: 'API Surface',
+    label: 'runtime',
+    description: 'The frontend talks to the local Express backend through auth, submissions, collection, and moderation endpoints exposed under /api.',
+    detail: 'Use the Vite proxy for local development and keep the contract stable for editor review and public resource reads.',
+  },
+  {
+    id: 'export-workflow',
+    title: 'Data Export Workflow',
+    label: 'versioned data',
+    description: 'Approved entries are exported into data/community-library.json so public content can be reviewed in git and synced across environments.',
+    detail: 'This separates runtime submissions from versioned library data and makes publishing reproducible.',
+  },
+  {
+    id: 'contribution-intake',
+    title: 'Contribution Intake',
+    label: 'editorial flow',
+    description: 'Contributors submit from the resources page, editors review in moderation, and only approved entries reach public collection pages.',
+    detail: 'The flow keeps submission open while preserving editorial control over what becomes part of the library.',
+  },
+]
+
 function DataPipeline() {
   const [copyState, setCopyState] = useState<CopyState | null>(null)
 
@@ -226,6 +250,31 @@ function DataPipeline() {
                 <pre className="code-block asset-command-block">
                   <code>{asset.command}</code>
                 </pre>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="pipeline-code-section" id="project-interfaces">
+        <div className="container">
+          <div className="section-header">
+            <h2>Project Interfaces</h2>
+            <p className="pashto-text">د پروژې د کارونې لارې</p>
+            <p>Use these entry points to understand how the application exposes data, review workflow, and contribution flow.</p>
+          </div>
+
+          <div className="asset-grid">
+            {projectInterfaces.map((item) => (
+              <article key={item.id} id={item.id} className="asset-card card">
+                <div className="asset-card-header">
+                  <div>
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
+                  </div>
+                  <span className="code-language">{item.label}</span>
+                </div>
+                <p>{item.detail}</p>
               </article>
             ))}
           </div>

@@ -150,25 +150,25 @@ function Home() {
       <section className="hero">
         <div className="container">
           <div className="hero-content fade-in">
-            <p className="hero-kicker">A Digital Home for Pashto</p>
+            <p className="hero-kicker">Open Pashto Language Platform</p>
             <h1>
-              A home for <span className="highlight">Pashto</span> speakers, learners, and builders
-              <span className="hero-pashto pashto-text">د پښتو ویونکو، زده کوونکو او جوړوونکو لپاره کور</span>
+              <span className="highlight">Pashto</span> tools, reviewed resources, and language infrastructure in one platform
+              <span className="hero-pashto pashto-text">د پښتو وسایل, تایید شوې سرچینې او ژبنیز بنسټونه په یوه پلیټفارم کې</span>
             </h1>
             <p className="hero-subtitle">
-              ZamAI Pashto is growing into a shared place for language learning, cultural memory,
-              useful tools, and open digital infrastructure so Pashto can live strongly online.
+              ZamAI Pashto brings together learning tools, curated public collections, and maintainable
+              workflows for building durable Pashto language software and reference content.
             </p>
             <div className="hero-actions">
               <Link to="/about" className="btn btn-primary btn-lg">
-                Explore the Hub
+                View Platform Overview
                 <span className="pashto-text">مرکز وپلټئ</span>
               </Link>
               <Link to="/resources" className="btn btn-outline btn-lg">
-                Browse Resources
+                Browse Reviewed Resources
               </Link>
               <Link to="/alphabet" className="btn btn-outline btn-lg">
-                Start with Language Basics
+                Open Learning Tools
               </Link>
             </div>
           </div>
@@ -180,7 +180,7 @@ function Home() {
                 <span>ت</span>
                 <span>و</span>
               </div>
-              <p>Language, culture, tools, and memory in one Pashto-first space</p>
+              <p>Reviewed content, usable tooling, and reproducible workflows for Pashto online</p>
             </div>
           </div>
         </div>

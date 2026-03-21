@@ -10,7 +10,7 @@ const navItems = [
   { path: '/translator', label: 'Translator', labelPashto: 'ژباړن' },
   { path: '/proverbs', label: 'Proverbs', labelPashto: 'متلونه' },
   { path: '/resources', label: 'Resources', labelPashto: 'سرچینې' },
-  { path: '/pipeline', label: 'Pipeline', labelPashto: 'پایپ لاین' },
+  { path: '/pipeline', label: 'Data Pipeline', labelPashto: 'پایپ لاین' },
   { path: '/about', label: 'About', labelPashto: 'په هکله' },
 ]
 
@@ -28,8 +28,10 @@ const footerLibraryLinks = [
 ]
 
 const footerProjectLinks = [
-  { path: '/resources/moderation', label: 'Editor Moderation' },
-  { path: '/about', label: 'About ZamAI' },
+  { path: '/pipeline#api-surface', label: 'API Surface' },
+  { path: '/resources/moderation#versioned-export', label: 'Data Export' },
+  { path: '/resources#contribute', label: 'Contribution Docs' },
+  { path: '/about', label: 'Project Overview' },
 ]
 
 function Layout() {
@@ -121,7 +123,7 @@ function Layout() {
               className={`btn ${editorSession ? 'btn-secondary' : 'btn-outline'} header-auth-link`}
               onClick={() => setMobileMenuOpen(false)}
             >
-              {editorSession ? 'Editor Panel' : 'Editor Login'}
+              {editorSession ? 'Project Console' : 'Maintainer Access'}
             </Link>
             {editorSession ? (
               <>
