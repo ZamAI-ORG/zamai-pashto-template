@@ -70,6 +70,11 @@ ZamAI Pashto is a comprehensive language learning and cultural preservation plat
 
 ## 🚀 Getting Started
 
+Maintainer onboarding:
+
+- Repository-level maintainer guide: [MAINTAINER_README.md](./MAINTAINER_README.md)
+- In-app operational documentation: `/docs`
+
 ### Prerequisites
 
 - Node.js 18+
@@ -109,6 +114,10 @@ Paste the generated hash into `EDITOR_PASSWORD_HASH` inside `.env`, then clear a
 ```bash
 npm run build
 ```
+
+### Maintainer Reference
+
+If you are operating the moderation flow, export pipeline, or backend API locally, start with [MAINTAINER_README.md](./MAINTAINER_README.md). It mirrors the in-app docs page and includes endpoint examples, versioned export flow, and the main maintainer file map.
 
 ### Testing Follow-up
 

@@ -1,6 +1,2 @@
-ools:
-    - opengrep@1.16.4
-    - eslint@8.57.0
 tools:
-    - opengrep@1.16.4
     - eslint@8.57.0

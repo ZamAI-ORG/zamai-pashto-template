@@ -72,24 +72,70 @@ const endpointExamples = [
     path: '/api/health',
     purpose: 'Basic API health check for local runtime validation.',
     example: 'curl http://localhost:3001/api/health',
+    requestJson: null,
+    responseJson: `{
+  "status": "ok"
+}`,
   },
   {
     method: 'POST',
     path: '/api/auth/login',
     purpose: 'Create an editor session and return a JWT token for protected moderation actions.',
     example: 'curl -X POST http://localhost:3001/api/auth/login -H "Content-Type: application/json" -d "{\"email\":\"editor@example.com\",\"password\":\"your-password\"}"',
+    requestJson: `{
+  "email": "editor@example.com",
+  "password": "your-password"
+}`,
+    responseJson: `{
+  "token": "<jwt-token>",
+  "editor": {
+    "email": "editor@example.com"
+  }
+}`,
   },
   {
     method: 'GET',
     path: '/api/resources/poetry',
     purpose: 'Read approved public entries for a collection surface.',
     example: 'curl http://localhost:3001/api/resources/poetry',
+    requestJson: null,
+    responseJson: `[
+  {
+    "id": "submission-id",
+    "collection": "poetry",
+    "title": "A village landay about departure",
+    "titlePashto": "...",
+    "summary": "Short public summary",
+    "body": "Full approved body text",
+    "tags": ["landay", "oral-tradition"],
+    "region": "Kandahar",
+    "contributor": "Contributor name",
+    "verificationStatus": "community-approved"
+  }
+]`,
   },
   {
     method: 'POST',
     path: '/api/admin/export-approved',
     purpose: 'Export approved entries into the versioned community library file.',
     example: 'curl -X POST http://localhost:3001/api/admin/export-approved -H "Authorization: Bearer <token>"',
+    requestJson: `{
+  "Authorization": "Bearer <token>"
+}`,
+    responseJson: `{
+  "path": "data/community-library.json",
+  "exportedAt": "2026-03-21T17:00:00.000Z",
+  "count": 2,
+  "library": {
+    "exportedAt": "2026-03-21T17:00:00.000Z",
+    "entries": {
+      "poetry": [],
+      "books": [],
+      "names": [],
+      "media": []
+    }
+  }
+}`,
   },
 ]
 
@@ -117,6 +163,36 @@ const maintainerFiles = [
   {
     path: 'data/community-submissions.json',
     role: 'Operational submission state used by the moderation workflow at runtime.',
+  },
+]
+
+const errorExamples = [
+  {
+    title: 'Failed Login',
+    status: 401,
+    endpoint: '/api/auth/login',
+    reason: 'Returned when the editor email or password does not match the configured credentials.',
+    responseJson: `{
+  "message": "Invalid editor email or password."
+}`,
+  },
+  {
+    title: 'Invalid or Missing Token',
+    status: 401,
+    endpoint: '/api/admin/export-approved',
+    reason: 'Returned when the Authorization header is missing, malformed, expired, or the token cannot be verified.',
+    responseJson: `{
+  "message": "Editor authentication is required."
+}`,
+  },
+  {
+    title: 'Unknown Collection',
+    status: 404,
+    endpoint: '/api/resources/:collection',
+    reason: 'Returned when the requested collection key is not one of the supported public resource collections.',
+    responseJson: `{
+  "message": "Unknown resource collection."
+}`,
   },
 ]
 
@@ -221,6 +297,20 @@ function Docs() {
                   </div>
                   <p>{endpoint.purpose}</p>
                   <pre className="docs-code-block"><code>{endpoint.example}</code></pre>
+                  <div className="docs-json-grid">
+                    <div className="docs-json-panel">
+                      <h3>Request JSON</h3>
+                      {endpoint.requestJson ? (
+                        <pre className="docs-code-block"><code>{endpoint.requestJson}</code></pre>
+                      ) : (
+                        <p className="docs-json-empty">No request body for this endpoint.</p>
+                      )}
+                    </div>
+                    <div className="docs-json-panel">
+                      <h3>Response JSON</h3>
+                      <pre className="docs-code-block"><code>{endpoint.responseJson}</code></pre>
+                    </div>
+                  </div>
                 </article>
               ))}
             </div>
@@ -242,6 +332,32 @@ function Docs() {
                 <article key={file.path} className="docs-file-card">
                   <code>{file.path}</code>
                   <p>{file.role}</p>
+                </article>
+              ))}
+            </div>
+          </article>
+
+          <article className="docs-section-card card">
+            <div className="docs-section-header">
+              <div>
+                <h2>Error Response Examples</h2>
+                <p className="pashto-text">د تېروتنې د ځواب بېلګې</p>
+              </div>
+              <span className="docs-anchor">#errors</span>
+            </div>
+            <p className="docs-section-description">
+              These examples cover the most common API failure cases maintainers will hit while validating auth and public collection behavior.
+            </p>
+            <div className="docs-file-grid">
+              {errorExamples.map((item) => (
+                <article key={`${item.endpoint}-${item.status}`} className="docs-file-card">
+                  <div className="docs-endpoint-header">
+                    <span className="docs-method docs-method-post">{item.status}</span>
+                    <code>{item.endpoint}</code>
+                  </div>
+                  <h3>{item.title}</h3>
+                  <p>{item.reason}</p>
+                  <pre className="docs-code-block"><code>{item.responseJson}</code></pre>
                 </article>
               ))}
             </div>
