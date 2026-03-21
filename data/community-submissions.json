@@ -1,9 +1,9 @@
 [
   {
     "id": "8271eeaf-6369-4727-8b95-195a9d0f4062",
-    "createdAt": "2026-03-20T23:02:24.138Z",
+    "createdAt": "2026-03-20T23:56:01.116Z",
     "status": "approved",
-    "source": "submission",
+    "source": "import",
     "collection": "names",
     "title": "بریالۍ",
     "titlePashto": "بریالۍ",
@@ -17,13 +17,14 @@
       "aspiration",
       "family"
     ],
-    "reviewedAt": "2026-03-20T23:03:15.669Z"
+    "reviewedAt": "2026-03-20T23:03:15.669Z",
+    "editorialNotes": "Imported from data/community-library.json"
   },
   {
     "id": "76c490bd-eaf2-4d03-9603-57c8d5dea70d",
-    "createdAt": "2026-03-20T23:02:10.964Z",
+    "createdAt": "2026-03-20T23:56:01.114Z",
     "status": "approved",
-    "source": "submission",
+    "source": "import",
     "collection": "poetry",
     "title": "A village landay about departure",
     "titlePashto": "لنډۍ د بېلتون په اړه",
@@ -37,6 +38,7 @@
       "migration",
       "memory"
     ],
-    "reviewedAt": "2026-03-20T23:03:15.826Z"
+    "reviewedAt": "2026-03-20T23:03:15.826Z",
+    "editorialNotes": "Imported from data/community-library.json"
   }
 ]

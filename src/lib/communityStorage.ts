@@ -77,6 +77,14 @@ function canUseStorage() {
   return typeof window !== 'undefined' && typeof window.localStorage !== 'undefined'
 }
 
+function emitEditorAuthChanged() {
+  if (typeof window === 'undefined') {
+    return
+  }
+
+  window.dispatchEvent(new Event('zamai-editor-auth-changed'))
+}
+
 export function getStoredEditorToken() {
   if (!canUseStorage()) {
     return null
@@ -91,6 +99,7 @@ export function saveEditorToken(token: string) {
   }
 
   window.localStorage.setItem(EDITOR_TOKEN_KEY, token)
+  emitEditorAuthChanged()
 }
 
 export function clearEditorToken() {
@@ -99,6 +108,7 @@ export function clearEditorToken() {
   }
 
   window.localStorage.removeItem(EDITOR_TOKEN_KEY)
+  emitEditorAuthChanged()
 }
 
 export async function createCommunitySubmission(draft: CommunitySubmissionDraft): Promise<CommunitySubmission> {

@@ -1,5 +1,6 @@
-import { useState } from 'react'
-import { Link, Outlet, useLocation } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom'
+import { clearEditorToken, getEditorSession, getStoredEditorToken, type EditorSession } from '../lib/communityStorage'
 import './Layout.css'
 
 const navItems = [
@@ -15,7 +16,61 @@ const navItems = [
 
 function Layout() {
   const location = useLocation()
+  const navigate = useNavigate()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [editorSession, setEditorSession] = useState<EditorSession | null>(null)
+
+  useEffect(() => {
+    let isActive = true
+
+    const syncEditorSession = async () => {
+      const storedToken = getStoredEditorToken()
+
+      if (!storedToken) {
+        if (isActive) {
+          setEditorSession(null)
+        }
+        return
+      }
+
+      try {
+        const session = await getEditorSession(storedToken)
+
+        if (isActive) {
+          setEditorSession(session)
+        }
+      } catch {
+        clearEditorToken()
+
+        if (isActive) {
+          setEditorSession(null)
+        }
+      }
+    }
+
+    const handleAuthChange = () => {
+      void syncEditorSession()
+    }
+
+    void syncEditorSession()
+    window.addEventListener('storage', handleAuthChange)
+    window.addEventListener('zamai-editor-auth-changed', handleAuthChange)
+
+    return () => {
+      isActive = false
+      window.removeEventListener('storage', handleAuthChange)
+      window.removeEventListener('zamai-editor-auth-changed', handleAuthChange)
+    }
+  }, [location.pathname])
+
+  const handleSignOut = () => {
+    clearEditorToken()
+    setMobileMenuOpen(false)
+
+    if (location.pathname.startsWith('/resources/moderation')) {
+      navigate('/resources/moderation')
+    }
+  }
 
   return (
     <div className="layout">
@@ -41,6 +96,24 @@ function Layout() {
               </Link>
             ))}
           </nav>
+
+          <div className="header-auth">
+            <Link
+              to="/resources/moderation"
+              className={`btn ${editorSession ? 'btn-secondary' : 'btn-outline'} header-auth-link`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {editorSession ? 'Editor Panel' : 'Editor Login'}
+            </Link>
+            {editorSession ? (
+              <>
+                <span className="header-auth-session">{editorSession.email}</span>
+                <button type="button" className="btn btn-outline header-auth-button" onClick={handleSignOut}>
+                  Sign out
+                </button>
+              </>
+            ) : null}
+          </div>
 
           <button
             className="mobile-menu-toggle"
@@ -69,6 +142,7 @@ function Layout() {
               {navItems.slice(0, 6).map((item) => (
                 <Link key={item.path} to={item.path}>{item.label}</Link>
               ))}
+              <Link to="/resources/moderation">Editor Moderation</Link>
             </nav>
           </div>
           <div className="footer-about">
