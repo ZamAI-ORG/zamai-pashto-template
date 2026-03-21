@@ -150,17 +150,17 @@ function Layout() {
       <footer className="footer">
         <div className="container footer-shell">
           <div className="footer-brand-panel">
-            <p className="footer-eyebrow">Pashto Language Platform</p>
+            <p className="footer-eyebrow">Open Pashto Platform</p>
             <h3>ZamAI Pashto</h3>
-            <p className="pashto-text footer-brand-pashto">د پښتو ویونکو، زده کوونکو او جوړوونکو لپاره یو ګډ کور</p>
+            <p className="pashto-text footer-brand-pashto">د پښتو ژبې د وسایلو، سرچینو او ډیجیټلي بنسټ لپاره پرانیستی پلیټفارم</p>
             <p className="footer-brand-copy">
-              A shared digital home for Pashto speakers, learners, and builders, combining language tools,
-              curated cultural references, and practical infrastructure for Pashto online.
+              An open platform for Pashto language tools, reviewed reference collections, and maintainable
+              data workflows that support long-term digital use.
             </p>
             <div className="footer-pill-row">
-              <span className="footer-pill">Language Learning</span>
-              <span className="footer-pill">Cultural Memory</span>
-              <span className="footer-pill">Open Infrastructure</span>
+              <span className="footer-pill">Learning Tools</span>
+              <span className="footer-pill">Reviewed Resources</span>
+              <span className="footer-pill">Open Source Stack</span>
             </div>
           </div>
 
@@ -175,7 +175,7 @@ function Layout() {
             </div>
 
             <div className="footer-column">
-              <h4>Library</h4>
+              <h4>Resources</h4>
               <nav>
                 {footerLibraryLinks.map((item) => (
                   <Link key={item.path} to={item.path}>{item.label}</Link>
@@ -191,7 +191,7 @@ function Layout() {
                 ))}
               </nav>
               <p className="footer-note">
-                Open-source tools, cultural resources, and language infrastructure designed to strengthen Pashto online.
+                Versioned content, editor review, and reproducible pipelines for building durable Pashto language infrastructure.
               </p>
             </div>
           </div>
@@ -199,7 +199,7 @@ function Layout() {
         <div className="footer-bottom">
           <div className="container footer-bottom-content">
             <p>&copy; 2024 ZamAI Pashto</p>
-            <p>Open source, community-led, and built for long-term Pashto visibility online.</p>
+            <p>Open-source platform for Pashto tools, curated resources, and long-term digital infrastructure.</p>
           </div>
         </div>
       </footer>
