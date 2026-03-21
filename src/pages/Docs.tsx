@@ -118,7 +118,7 @@ const endpointExamples = [
     method: 'POST',
     path: '/api/admin/export-approved',
     purpose: 'Export approved entries into the versioned community library file.',
-    example: 'curl -X POST http://localhost:3001/api/admin/export-approved -H "Authorization: Bearer <token>"',
+    example: `curl -X POST http://localhost:3001/api/admin/export-approved -H \"Authorization: Bearer <token>\"`,
     requestJson: `{
   "Authorization": "Bearer <token>"
 }`,
