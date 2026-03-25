@@ -1,3 +1,11 @@
+# ZamAI Pashto Template
+
+A starter template for Pashto language projects under ZamAI Labs.
+
+- Website: https://zamai.dev
+- Labs: https://github.com/ZamAI-ORG
+
+
 # ZamAI Pashto 🇦🇫
 
 ## Learn Pashto Language & Explore Afghan Culture
